@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MaterialApp(
-  home: QuoteList(),
-));
+      home: QuoteList(),
+    ));
 
 class QuoteList extends StatefulWidget {
   const QuoteList({super.key});
@@ -12,8 +12,26 @@ class QuoteList extends StatefulWidget {
 }
 
 class _QuoteListState extends State<QuoteList> {
+  List<String> quotes = [
+    'Be yourself, everyone else is already taken',
+    'I have nothing to declare except my genius',
+    'The truth is rarely pure and never simple'
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+        backgroundColor: Colors.grey[200],
+        appBar: AppBar(
+          title: const Text('Awesome Quotes'),
+          centerTitle: true,
+          backgroundColor: Colors.redAccent,
+        ),
+        body: Column(
+          children: quotes.map((quote) {
+            return Text(quote);
+          }).toList(),
+        )
+    );
   }
 }
