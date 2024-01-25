@@ -27,7 +27,8 @@ class _QuoteListState extends State<QuoteList> {
         appBar: AppBar(
           title: const Text('Awesome Quotes'),
           centerTitle: true,
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Colors.red,
+          foregroundColor: Colors.white,
         ),
         body: Column(
           children: quotes.map((quote) => QuoteCard(
